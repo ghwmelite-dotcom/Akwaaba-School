@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0B5D3B" />
+<meta name="description" content="Akwaaba Learning Garden — a creche, nursery & primary school in Accra where Ghanaian children grow with confidence, curiosity and culture." />
+<title>Akwaaba Learning Garden · Creche · Nursery · Primary</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green:#0B5D3B;        /* deep forest green */
+  --green-2:#138A57;
+  --gold:#F2B705;         /* kente gold */
+  --terracotta:#D9602B;   /* clay */
+  --cream:#FBF6EC;
+  --ink:#1A1410;
+  --rose:#E8587A;
+  --sky:#3FA7D6;
+  --shadow:0 18px 40px -18px rgba(11,93,59,.45);
+  --r:26px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:'Fraunces',serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ---------- decorative kente strip ---------- */
+.kente{
+  height:14px;
+  background:
+    repeating-linear-gradient(90deg,
+      var(--green) 0 22px, var(--gold) 22px 38px,
+      var(--terracotta) 38px 54px, var(--ink) 54px 60px,
+      var(--rose) 60px 76px, var(--sky) 76px 92px);
+}
+
+/* ---------- top bar ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,246,236,.82);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(11,93,59,.1);
+}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-weight:900;font-size:1.25rem;color:var(--green)}
+.logo .mark{
+  width:38px;height:38px;border-radius:12px;
+  background:radial-gradient(circle at 30% 30%,var(--gold),var(--terracotta));
+  display:grid;place-items:center;font-size:1.1rem;transform:rotate(-6deg);
+  box-shadow:var(--shadow);
+}
+.navlinks{display:flex;gap:26px;align-items:center}
+.navlinks a{font-weight:500;font-size:.95rem;position:relative}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;height:2px;width:0;background:var(--terracotta);transition:.3s}
+.navlinks a:hover::after{width:100%}
+.btn{
+  background:var(--green);color:#fff;padding:11px 20px;border-radius:40px;
+  font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:.25s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn:hover{background:var(--green-2);transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:#ffc724}
+.burger{display:none;background:none;border:none;font-size:1.6rem;color:var(--green);cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:70px 0 90px;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.5;z-index:0}
+.b1{width:340px;height:340px;background:var(--gold);top:-80px;right:-60px}
+.b2{width:260px;height:260px;background:var(--rose);bottom:-90px;left:-70px;opacity:.35}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(11,93,59,.15);padding:7px 15px;border-radius:30px;font-size:.8rem;font-weight:600;color:var(--green);box-shadow:var(--shadow)}
+.tag .dot{width:8px;height:8px;border-radius:50%;background:var(--terracotta);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.4}}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.02;margin:22px 0 18px;font-weight:900;letter-spacing:-1px}
+.hero h1 em{font-style:italic;color:var(--terracotta)}
+.hero p{font-size:1.12rem;color:#4a4038;max-width:480px;margin-bottom:30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.heroart{position:relative}
+.card-img{
+  border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);
+  background:linear-gradient(135deg,var(--green),var(--green-2));
+  aspect-ratio:4/5;position:relative;
+  display:grid;place-items:center;
+}
+.card-img .emoji{font-size:7rem;filter:drop-shadow(0 8px 18px rgba(0,0,0,.25));animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-16px) rotate(3deg)}}
+.float-badge{
+  position:absolute;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:var(--shadow);
+  font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:10px;
+}
+.fb1{top:24px;left:-24px;color:var(--green);animation:float 5s ease-in-out infinite}
+.fb2{bottom:36px;right:-20px;color:var(--terracotta);animation:float 6s ease-in-out infinite reverse}
+.fb .num{font-family:'Fraunces';font-weight:900;font-size:1.3rem}
+
+/* ---------- stat row ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+.stat{background:#fff;border-radius:20px;padding:22px;text-align:center;box-shadow:var(--shadow);border:1px solid rgba(11,93,59,.06)}
+.stat .n{font-family:'Fraunces';font-weight:900;font-size:2rem;color:var(--green)}
+.stat .l{font-size:.85rem;color:#6b6258;margin-top:4px}
+
+/* ---------- section heading ---------- */
+section{padding:80px 0}
+.eyebrow{font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.75rem;color:var(--terracotta)}
+.sec-title{font-size:clamp(2rem,4vw,3rem);font-weight:900;margin:10px 0 16px;letter-spacing:-1px;line-height:1.05}
+.sec-sub{color:#6b6258;max-width:560px;font-size:1.05rem}
+
+/* ---------- programs ---------- */
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.prog{
+  border-radius:var(--r);padding:30px;color:#fff;position:relative;overflow:hidden;
+  min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;
+  transition:.35s;cursor:pointer;
+}
+.prog:hover{transform:translateY(-8px) scale(1.01)}
+.prog.c1{background:linear-gradient(160deg,var(--terracotta),#b8491f)}
+.prog.c2{background:linear-gradient(160deg,var(--green-2),var(--green))}
+.prog.c3{background:linear-gradient(160deg,var(--sky),#2c7fa8)}
+.prog .age{position:absolute;top:24px;left:24px;background:rgba(255,255,255,.22);padding:6px 13px;border-radius:20px;font-size:.78rem;font-weight:600}
+.prog .ico{position:absolute;top:60px;right:24px;font-size:3.2rem;opacity:.9}
+.prog h3{font-size:1.55rem;margin-bottom:8px}
+.prog p{font-size:.95rem;opacity:.92;line-height:1.5}
+.prog .more{margin-top:16px;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:6px}
+
+/* ---------- features (innovative) ---------- */
+.features{background:var(--ink);color:var(--cream);border-radius:40px;margin:0 22px;padding:70px 0}
+.features .wrap{padding:0 40px}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.feat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px;transition:.3s}
+.feat:hover{background:rgba(242,183,5,.12);border-color:var(--gold);transform:translateY(-5px)}
+.feat .fi{width:50px;height:50px;border-radius:14px;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-size:1.5rem;margin-bottom:16px}
+.feat h4{font-family:'Fraunces';font-size:1.2rem;margin-bottom:8px;color:#fff}
+.feat p{font-size:.92rem;color:#c9c2b6;line-height:1.55}
+
+/* ---------- parent portal widget ---------- */
+.portal{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.phone{
+  background:#fff;border-radius:34px;padding:18px;box-shadow:var(--shadow);
+  max-width:330px;margin:0 auto;border:8px solid var(--ink);
+}
+.phone .screen{background:var(--cream);border-radius:22px;overflow:hidden}
+.phone .ph-top{background:var(--green);color:#fff;padding:18px;font-family:'Fraunces';font-weight:700}
+.phone .ph-top small{display:block;font-family:'Outfit';font-weight:400;opacity:.8;font-size:.78rem}
+.msg{padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.06);display:flex;gap:12px;align-items:flex-start}
+.msg .ava{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0}
+.msg .t{font-size:.82rem;font-weight:600}
+.msg .s{font-size:.72rem;color:#8a8175}
+.attendance{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;background:rgba(19,138,87,.08)}
+.attendance .ok{background:var(--green-2);color:#fff;padding:4px 12px;border-radius:14px;font-size:.72rem;font-weight:600}
+
+/* ---------- AI assistant teaser ---------- */
+.ai-card{background:linear-gradient(135deg,var(--gold),var(--terracotta));border-radius:var(--r);padding:34px;color:var(--ink);box-shadow:var(--shadow)}
+.ai-chat{background:rgba(255,255,255,.75);border-radius:18px;padding:16px;margin-top:18px;font-size:.9rem}
+.bubble{background:#fff;border-radius:14px;padding:10px 14px;margin-bottom:10px;max-width:85%;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.bubble.me{background:var(--green);color:#fff;margin-left:auto}
+.typing{display:inline-flex;gap:4px}
+.typing span{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.ai-input{display:flex;gap:8px;margin-top:14px}
+.ai-input input{flex:1;border:none;border-radius:30px;padding:12px 16px;font-family:inherit;font-size:.9rem;outline:none}
+.ai-input button{background:var(--green);color:#fff;border:none;border-radius:50%;width:44px;height:44px;cursor:pointer;font-size:1.1rem}
+
+/* ---------- gallery ---------- */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.gtile{border-radius:18px;aspect-ratio:1;display:grid;place-items:center;font-size:2.6rem;transition:.3s;cursor:pointer}
+.gtile:hover{transform:scale(1.05) rotate(2deg)}
+.g1{background:#FCE4C4}.g2{background:#CDEBDA}.g3{background:#D6EAF6}.g4{background:#F8D7DF}
+.g5{background:#E8E0F0}.g6{background:#FCE9B8}.g7{background:#D2EFE0}.g8{background:#FBD9C9}
+
+/* ---------- admissions / CTA ---------- */
+.cta{background:linear-gradient(135deg,var(--green),var(--green-2));border-radius:40px;padding:64px 40px;text-align:center;color:#fff;margin:0 22px;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:14px}
+.cta p{opacity:.9;max-width:520px;margin:0 auto 28px}
+.cta .pattern{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(circle,#fff 2px,transparent 2px);background-size:26px 26px}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#c9c2b6;padding:54px 0 30px;margin-top:80px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px}
+footer h5{color:#fff;font-family:'Fraunces';margin-bottom:14px}
+footer a{display:block;margin-bottom:9px;font-size:.9rem;transition:.2s}
+footer a:hover{color:var(--gold)}
+.fbottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:22px;text-align:center;font-size:.82rem;opacity:.7}
+
+/* ---------- install / offline toast ---------- */
+.install-bar{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(140%);
+  background:var(--ink);color:#fff;border-radius:18px;padding:14px 18px;display:flex;
+  align-items:center;gap:16px;box-shadow:var(--shadow);z-index:100;transition:.4s;max-width:92vw;
+}
+.install-bar.show{transform:translateX(-50%) translateY(0)}
+.install-bar .ii{width:42px;height:42px;border-radius:12px;background:var(--gold);display:grid;place-items:center;font-size:1.3rem}
+.install-bar b{display:block;font-size:.92rem}
+.install-bar small{font-size:.78rem;opacity:.75}
+.install-bar button{white-space:nowrap}
+.install-bar .x{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;opacity:.6;padding:0 4px}
+.offline-pill{position:fixed;top:74px;left:50%;transform:translateX(-50%) translateY(-200%);background:var(--terracotta);color:#fff;padding:9px 18px;border-radius:30px;font-size:.85rem;font-weight:600;z-index:100;transition:.4s;box-shadow:var(--shadow)}
+.offline-pill.show{transform:translateX(-50%) translateY(0)}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .hero .wrap,.portal{grid-template-columns:1fr}
+  .heroart{order:-1;max-width:360px;margin:0 auto}
+  .programs,.feat-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .navlinks{
+    position:fixed;top:64px;right:0;flex-direction:column;background:var(--cream);
+    width:230px;height:calc(100vh - 64px);padding:30px;gap:20px;align-items:flex-start;
+    transform:translateX(100%);transition:.35s;box-shadow:var(--shadow);
+  }
+  .navlinks.open{transform:none}
+  .burger{display:block}
+  .features .wrap{padding:0 22px}
+}
+</style>
+</head>
+<body>
+<div class="kente"></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo"><span class="mark">🌱</span> Akwaaba<span style="color:var(--terracotta)">.</span></a>
+      <div class="navlinks" id="navlinks">
+        <a href="#programs">Programs</a>
+        <a href="#features">Why Us</a>
+        <a href="#portal">Parent App</a>
+        <a href="#gallery">Life Here</a>
+        <a href="#admissions" class="btn gold">Apply Now</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="tag"><span class="dot"></span> Now enrolling · 2026 / 2027 term</span>
+      <h1>Where little Ghanaians <em>grow</em> with confidence & culture.</h1>
+      <p>From crèche to Class 6 — a play-rich, tech-smart school in Accra blending the GES curriculum with Montessori warmth, our heritage, and the future your child deserves.</p>
+      <div class="hero-cta">
+        <a href="#admissions" class="btn">Book a school tour 🌿</a>
+        <a href="#portal" class="btn gold">See the parent app</a>
+      </div>
+    </div>
+    <div class="heroart reveal">
+      <div class="card-img"><span class="emoji">🧒🏾</span></div>
+      <div class="float-badge fb fb1"><span class="num">98%</span> parent satisfaction</div>
+      <div class="float-badge fb fb2"><span class="num">12:1</span> child-to-teacher</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="n">3mo–12yrs</div><div class="l">Crèche to Primary</div></div>
+      <div class="stat"><div class="n">15+</div><div class="l">Years in Accra</div></div>
+      <div class="stat"><div class="n">28</div><div class="l">Caring educators</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">BECE-ready by P6</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Our Programs</span>
+      <h2 class="sec-title">A pathway built for every stage.</h2>
+      <p class="sec-sub">Each level is designed around how children actually learn — through play, song, story and discovery, rooted in Ghanaian life.</p>
+    </div>
+    <div class="programs">
+      <div class="prog c1 reveal">
+        <span class="age">3 months – 2 yrs</span>
+        <span class="ico">🍼</span>
+        <h3>Crèche & Daycare</h3>
+        <p>Safe, loving care with sensory play, nap routines and trained caregivers. Live photo updates to parents all day.</p>
+        <span class="more">Explore →</span>
+      </div>
+      <div class="prog c2 reveal">
+        <span class="age">2 – 5 yrs</span>
+        <span class="ico">🎨</span>
+        <h3>Nursery & KG</h3>
+        <p>Montessori-inspired learning, Twi & English, music and movement. Where curiosity becomes a lifelong habit.</p>
+        <span class="more">Explore →</span>
+      </div>
+      <div class="prog c3 reveal">
+        <span class="age">6 – 12 yrs</span>
+        <span class="ico">📚</span>
+        <h3>Primary (B1–B6)</h3>
+        <p>Full GES standards-based curriculum, coding & robotics club, and project work that builds real-world thinkers.</p>
+        <span class="more">Explore →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="features">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--gold)">What makes us different</span>
+        <h2 class="sec-title" style="color:#fff">Innovation that puts your child first.</h2>
+      </div>
+      <div class="feat-grid">
+        <div class="feat reveal"><div class="fi">📲</div><h4>Live Parent Portal</h4><p>Real-time attendance, meal logs, nap times, photos and report cards — all in your pocket, even offline.</p></div>
+        <div class="feat reveal"><div class="fi">🤖</div><h4>AI Homework Helper</h4><p>A friendly, child-safe AI tutor that helps with maths and reading in English and Twi, guided by our teachers.</p></div>
+        <div class="feat reveal"><div class="fi">🔒</div><h4>Smart Pick-up Security</h4><p>QR-code & face-verified pick-up so only approved guardians can collect your child. Every entry logged.</p></div>
+        <div class="feat reveal"><div class="fi">💳</div><h4>MoMo Fee Payments</h4><p>Pay term fees instantly via MTN MoMo, Telecel or card. Automatic receipts and reminders, no queues.</p></div>
+        <div class="feat reveal"><div class="fi">🧠</div><h4>STEM & Robotics Lab</h4><p>From scratch coding to robotics, our makerspace prepares pupils for the jobs of tomorrow.</p></div>
+        <div class="feat reveal"><div class="fi">🌍</div><h4>Culture & Character</h4><p>Local languages, our values, drumming and dance woven through the week — proud roots, global minds.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT PORTAL -->
+<section id="portal">
+  <div class="wrap">
+    <div class="portal">
+      <div class="reveal">
+        <span class="eyebrow">The Akwaaba App</span>
+        <h2 class="sec-title">Stay connected to your child's day.</h2>
+        <p class="sec-sub" style="margin-bottom:24px">Install our app to your phone in one tap — no app store needed. Get instant updates, message teachers, view report cards and pay fees, all in one place. Works even on a weak network.</p>
+        <button class="btn" id="installBtn2">📥 Install the app</button>
+      </div>
+      <div class="reveal">
+        <div class="phone">
+          <div class="screen">
+            <div class="ph-top">Hi, Ama's mum 👋<small>Tuesday · Today's updates</small></div>
+            <div class="attendance"><span style="font-size:.85rem;font-weight:600">✅ Ama arrived</span><span class="ok">8:42 AM</span></div>
+            <div class="msg"><div class="ava" style="background:#FCE4C4">🍲</div><div><div class="t">Lunch eaten — all of it!</div><div class="s">Jollof & chicken · 12:30 PM</div></div></div>
+            <div class="msg"><div class="ava" style="background:#CDEBDA">📸</div><div><div class="t">New photos from art class</div><div class="s">Miss Esi added 4 photos · 2:10 PM</div></div></div>
+            <div class="msg"><div class="ava" style="background:#D6EAF6">💤</div><div><div class="t">Nap time done</div><div class="s">Slept 45 mins · 1:15 PM</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI ASSISTANT -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="ai-card reveal">
+      <span class="eyebrow" style="color:var(--ink)">Try it now</span>
+      <h2 style="font-family:'Fraunces';font-size:1.8rem;margin:8px 0 4px">Ask Kofi — our admissions assistant 🤖</h2>
+      <p style="font-size:.95rem">Got a question about fees, ages or the tour? Ask away.</p>
+      <div class="ai-chat" id="chatBox">
+        <div class="bubble">Akwaaba! I'm Kofi. Ask me anything about admissions, fees or programs. 😊</div>
+      </div>
+      <div class="ai-input">
+        <input id="aiInput" placeholder="e.g. What are the crèche fees?" />
+        <button id="aiSend">➤</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Life at Akwaaba</span>
+      <h2 class="sec-title">Happy days, every day.</h2>
+    </div>
+    <div class="gallery reveal">
+      <div class="gtile g1">🎨</div><div class="gtile g2">⚽</div><div class="gtile g3">📖</div><div class="gtile g4">🥁</div>
+      <div class="gtile g5">🔬</div><div class="gtile g6">🎭</div><div class="gtile g7">🌻</div><div class="gtile g8">🧩</div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS CTA -->
+<section id="admissions">
+  <div class="cta reveal">
+    <div class="pattern"></div>
+    <div style="position:relative;z-index:2">
+      <h2>Give your child the Akwaaba start.</h2>
+      <p>Limited spaces for the 2026/2027 term. Book a personal tour and meet our team — we'd love to welcome your family.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="#" class="btn gold">📅 Book a tour</a>
+        <a href="tel:+233000000000" class="btn" style="background:#fff;color:var(--green)">📞 Call us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:14px"><span class="mark">🌱</span> Akwaaba</div>
+        <p style="font-size:.9rem;max-width:280px">Akwaaba Learning Garden — nurturing confident, curious & proud Ghanaian children since 2011. East Legon, Accra.</p>
+      </div>
+      <div><h5>School</h5><a href="#programs">Programs</a><a href="#features">Why Us</a><a href="#gallery">Gallery</a><a href="#admissions">Admissions</a></div>
+      <div><h5>Parents</h5><a href="#portal">Parent App</a><a href="#">Pay fees</a><a href="#">Term calendar</a><a href="#">Newsletter</a></div>
+      <div><h5>Contact</h5><a href="tel:+233000000000">+233 00 000 0000</a><a href="mailto:hello@akwaaba.edu.gh">hello@akwaaba.edu.gh</a><a href="#">East Legon, Accra</a></div>
+    </div>
+    <div class="fbottom">© 2026 Akwaaba Learning Garden · Built as a PWA · Works offline 🌍</div>
+  </div>
+</footer>
+
+<!-- INSTALL BAR -->
+<div class="install-bar" id="installBar">
+  <div class="ii">📱</div>
+  <div><b>Install Akwaaba</b><small>Add to your home screen — works offline</small></div>
+  <button class="btn gold" id="installBtn">Install</button>
+  <button class="x" id="installX">×</button>
+</div>
+
+<div class="offline-pill" id="offlinePill">📴 You're offline — showing saved content</div>
+
+<script>
+/* ---------- mobile nav ---------- */
+const burger=document.getElementById('burger'),navlinks=document.getElementById('navlinks');
+burger.onclick=()=>navlinks.classList.toggle('open');
+navlinks.querySelectorAll('a').forEach(a=>a.onclick=()=>navlinks.classList.remove('open'));
+
+/* ---------- scroll reveal ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+
+/* ---------- count-up stats ---------- */
+/* (left as static text for realism) */
+
+/* ---------- fake AI assistant ---------- */
+const chatBox=document.getElementById('chatBox'),aiInput=document.getElementById('aiInput'),aiSend=document.getElementById('aiSend');
+const kb=[
+  {k:['fee','cost','price','momo','pay'],a:"Fees vary by level — crèche from GHS 1,200/term, nursery from GHS 1,500, primary from GHS 1,800. You can pay easily via MTN MoMo, Telecel Cash or card. Want me to send the full fee sheet? 💳"},
+  {k:['age','old','years','crèche','creche'],a:"We welcome children from 3 months (crèche) right through to 12 years (Primary 6). Which age group are you considering? 🧒🏾"},
+  {k:['tour','visit','book','see'],a:"Lovely! We run tours every Tuesday & Thursday at 10am. Tap 'Book a tour' above or call us and we'll arrange a time that suits you. 📅"},
+  {k:['curriculum','learn','teach','ges','subject'],a:"We follow Ghana's GES standards-based curriculum, enriched with Montessori methods, Twi & English, coding/robotics and our cultural studies. 📚"},
+  {k:['location','where','address'],a:"We're in East Legon, Accra — easy to reach with safe drop-off. I can share a map link if you'd like! 📍"},
+  {k:['hello','hi','akwaaba','hey'],a:"Akwaaba! 😊 How can I help — fees, ages, tours, or our programs?"}
+];
+function reply(t){
+  t=t.toLowerCase();
+  for(const e of kb){if(e.k.some(k=>t.includes(k)))return e.a;}
+  return "Great question! For that one, our admissions team will give you the best answer — tap 'Book a tour' or call +233 00 000 0000. Anything else I can help with? 🌿";
+}
+function addBubble(txt,me){const b=document.createElement('div');b.className='bubble'+(me?' me':'');b.textContent=txt;chatBox.appendChild(b);chatBox.scrollTop=chatBox.scrollHeight;return b;}
+function send(){
+  const v=aiInput.value.trim();if(!v)return;
+  addBubble(v,true);aiInput.value='';
+  const typing=addBubble('',false);typing.innerHTML='<span class="typing"><span></span><span></span><span></span></span>';
+  setTimeout(()=>{typing.remove();addBubble(reply(v),false);},900);
+}
+aiSend.onclick=send;aiInput.onkeydown=e=>{if(e.key==='Enter')send()};
+
+/* ---------- PWA install ---------- */
+let deferredPrompt;
+const bar=document.getElementById('installBar');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;setTimeout(()=>bar.classList.add('show'),2500);});
+async function doInstall(){
+  if(!deferredPrompt){alert("To install: open your browser menu and tap 'Add to Home screen'. 📲");return;}
+  deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;bar.classList.remove('show');
+}
+document.getElementById('installBtn').onclick=doInstall;
+document.getElementById('installBtn2').onclick=doInstall;
+document.getElementById('installX').onclick=()=>bar.classList.remove('show');
+window.addEventListener('appinstalled',()=>bar.classList.remove('show'));
+
+/* ---------- offline detection ---------- */
+const pill=document.getElementById('offlinePill');
+function net(){pill.classList.toggle('show',!navigator.onLine);}
+window.addEventListener('online',net);window.addEventListener('offline',net);net();
+
+/* ---------- service worker ---------- */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>

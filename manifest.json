@@ -1,0 +1,23 @@
+{
+  "name": "Akwaaba Learning Garden",
+  "short_name": "Akwaaba",
+  "description": "Crèche, Nursery & Primary School in Accra — live parent portal, fees, updates and more.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF6EC",
+  "theme_color": "#0B5D3B",
+  "categories": ["education", "kids"],
+  "lang": "en-GH",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Parent App", "url": "./index.html#portal", "description": "Open the parent portal" },
+    { "name": "Apply Now", "url": "./index.html#admissions", "description": "Start an application" },
+    { "name": "Pay Fees", "url": "./index.html#portal", "description": "Pay term fees via MoMo" }
+  ]
+}

@@ -1,0 +1,7 @@
+# Local tooling / editor config
+.claude/
+.DS_Store
+Thumbs.db
+
+# Dependencies (none currently, but future-proof)
+node_modules/
